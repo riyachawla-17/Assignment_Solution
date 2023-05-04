@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <title>JavaScript getDay Method</title>
+   </head>
+   
+   <body>   
+      <script type = "text/javascript">
+            var data = [{
+            date: '2020-01-01',
+            value: 4
+            },{
+                date: '2020-01-02',
+              value: 4
+            },{
+                date: '2020-01-03',
+              value: 6
+            },{
+                date: '2020-01-04',
+              value: 8
+            },{
+                date: '2020-01-05',
+              value: 2
+            },{
+                date: '2020-01-06',
+              value: -6
+            },{
+                date: '2020-01-07',
+              value: 2
+            },{
+                date: '2020-01-08',
+              value: -2
+            }]
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            var Vals = [];
+
+            var Val = days.forEach(function(day) {
+              var total = 0;
+              data.forEach(function(items) {
+                var d = new Date(items.date);
+                var formattedD = days[d.getDay()];
+                if (day === formattedD) {
+                  total += parseFloat(items.value);
+                }
+              })
+              Vals.push(total)
+
+            })
+           for (i=0;i<7;i++)  
+           {
+            document.write(days[i] + ':' + Vals[i] + ' ');
+           }
+
+      </script>      
+   </body>
+</html>
